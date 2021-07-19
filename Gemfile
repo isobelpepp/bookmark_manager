@@ -5,5 +5,9 @@ gem 'sinatra-contrib'
 gem 'webrick'
 gem 'capybara'
 gem 'selenium-webdriver'
-gem 'chromedriver-helper'
-gem "webdrivers"
+gem 'webdrivers'
+
+group :test do
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end

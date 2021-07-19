@@ -18,12 +18,21 @@ ENV['RACK_ENV'] = 'test'
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
+require 'simplecov'
+require 'simplecov-console'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Battle
+Capybara.app = Bookmark_Manager
+
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::Console])
+SimpleCov.start
+
+
   
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
