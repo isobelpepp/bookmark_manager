@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/bookmark.rb'
 
 class Bookmark_Manager < Sinatra::Base
   configure :development do
@@ -7,7 +8,12 @@ class Bookmark_Manager < Sinatra::Base
   end
 
   get '/' do
-    'Testing infrastructure working!'
+    erb(:index)
+  end
+
+  get '/bookmarks' do
+    @list = Bookmark.list
+    erb(:bookmarks)
   end
 
   # start the server if ruby file executed directly
