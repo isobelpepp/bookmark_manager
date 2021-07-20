@@ -12,7 +12,7 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 # Capybara set up
-
+ENV['ENVIRONMENT'] = 'test'
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file

@@ -18,3 +18,9 @@ CREATE DATABASE bookmark_manager;
 \c bookmark_manager;
 ```
 4. Run the SQL scripts in the 'db/migrations' folder in given order.
+
+5. Use SQL query saved in db/migrations 01_create_bookmark_manager
+```
+CREATE DATABASE "bookmark_manager_test";
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
