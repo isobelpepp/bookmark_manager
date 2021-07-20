@@ -6,6 +6,7 @@ gem 'webrick'
 gem 'capybara'
 gem 'selenium-webdriver'
 gem 'webdrivers'
+gem 'pg'
 
 group :test do
   gem 'simplecov', require: false
