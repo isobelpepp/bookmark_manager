@@ -30,6 +30,14 @@ describe Bookmark do
       expect(bookmark.title).to eq('Facebook')
     end
   end
+
+  describe '.delete' do
+    it 'deletes a bookmark from the table' do
+      bookmark = Bookmark.create(url: 'http://www.facebook.co.uk', title: 'Facebook')
+      Bookmark.delete(id: bookmark.id)
+      expect(Bookmark.list).not_to include 'Facebook'
+    end
+  end
 end
 
 

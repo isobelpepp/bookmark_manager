@@ -8,6 +8,8 @@ class Bookmark_Manager < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :method_override
+
   get '/' do
     erb(:index)
   end
@@ -25,6 +27,12 @@ class Bookmark_Manager < Sinatra::Base
     @url = params['url']
     @title = params['title']
     Bookmark.create(url: @url, title: @title)
+    redirect '/bookmarks'
+  end
+
+  delete '/bookmarks/:id' do
+    @id = params[:id]
+    Bookmark.delete(id: @id)
     redirect '/bookmarks'
   end
 
