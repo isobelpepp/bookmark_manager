@@ -12,6 +12,12 @@ So that I can store websites I like
 I would like to add a bookmark to the Bookmark Manager
 ```
 
+``` 
+As a user
+In case I add a bookmark by mistake or don't need it anymore
+I would like to be able to delete bookmarks
+```
+
 ### Setting up the database
 
 1. Connect to 'psql' and create the 'bookmark_manager' database:
